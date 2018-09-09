@@ -1,14 +1,26 @@
 import React from 'react'
 
-const Toolbar = props => (<HandleBar cl="ultraviolet" />)
-const HandleBar = props => (<Button classNm={props.cl} />)
-const Button = props => (<button className={props.classNm}>Btn</button>)
+const Toolbar = theme => {
+  return (<HandleBar {...theme} />)
+}
+const HandleBar = theme => {
+  return(
+    <Button {...theme}></Button>
+  )
+}
+const Button = ({btnTheme, btnText}) => (<button className={btnTheme}>{btnText}</button>)
 
 const App = () => {
+  var theme = {btnTheme:"dark", btnText:"Push me"};
   return (
     <React.Fragment>
       <h3>Hello World!</h3>
-      <Toolbar theme="dark" />
+      <Toolbar {
+        // is equal to theme = {<deconstruction:> theme }
+        // notice, that this cannot be put as {btnTheme:"dark", btnText:"Push me"} !
+        // so that's why the deconstruction is needed here
+        ...theme
+      } />
     </React.Fragment>
   )
 }
