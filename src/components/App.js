@@ -1,26 +1,31 @@
 import React from 'react'
 
-const Toolbar = theme => {
-  return (<HandleBar {...theme} />)
+const Toolbar = () => {
+  return (<HandleBar />)
 }
-const HandleBar = theme => {
-  return(
-    <Button {...theme}></Button>
+const HandleBar = () => {
+  return (
+    <ThemeContext.Consumer>
+      {theme => <Button class_name={theme}></Button>}
+    </ThemeContext.Consumer>
   )
 }
-const Button = ({btnTheme, btnText}) => (<button className={btnTheme}>{btnText}</button>)
+const Button = ( props ) => {
+  console.log(props);
+  return (<button className={props.class_name}>Btn here</button>)
+}
+/* */
+
+const ThemeContext = React.createContext({theme:'light'});
 
 const App = () => {
-  var theme = {btnTheme:"dark", btnText:"Push me"};
+  // var theme = { btnTheme: "dark", btnText: "Push me" };
   return (
     <React.Fragment>
       <h3>Hello World!</h3>
-      <Toolbar {
-        // is equal to theme = {<deconstruction:> theme }
-        // notice, that this cannot be put as {btnTheme:"dark", btnText:"Push me"} !
-        // so that's why the deconstruction is needed here
-        ...theme
-      } />
+      <ThemeContext.Provider value="dark">
+        <Toolbar />
+      </ThemeContext.Provider>
     </React.Fragment>
   )
 }
