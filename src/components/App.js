@@ -16,10 +16,9 @@ const Button = ( props ) => {
   return (<button className={props.class_name}>{props.text}</button>)
 }
 
-//const value = { class_name: "dark", text: "Push me" };
-//const ThemeContext = React.createContext(value);
-const ThemeContext = React.createContext({ class_name: "dark", text: "Push me" });
-console.log(ThemeContext);
+const value = { class_name: "dark", text: "Push me" };
+const ThemeContext = React.createContext(value);
+
 const App = () => {
   return (
     <React.Fragment>
@@ -27,7 +26,7 @@ const App = () => {
       <p>Look, we don't need to pass <em>props</em> as an argument down the hierarchy anymore!</p>
       <p>Moreover, no matter which argument name we pass to <b>HandleBar</b> children.</p>
       <hr />
-      <ThemeContext.Provider value={ThemeContext._currentValue}>
+      <ThemeContext.Provider value={value}>
         <Toolbar />
       </ThemeContext.Provider>
     </React.Fragment>
