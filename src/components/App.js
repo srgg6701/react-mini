@@ -6,18 +6,20 @@ const Toolbar = () => {
 const HandleBar = () => {
   return (
     <ThemeContext.Consumer>
-      {someprops => <Button {...someprops}></Button>}
+      { // the name of arguments don't matter because it considers Provider data 
+        someprops => <Button {...someprops}></Button>
+      }
     </ThemeContext.Consumer>
   )
 }
 const Button = ( props ) => {
-  console.log(props);
   return (<button className={props.class_name}>{props.text}</button>)
 }
 
-const value = { class_name: "dark", text: "Push me" };
-const ThemeContext = React.createContext(value);
-
+//const value = { class_name: "dark", text: "Push me" };
+//const ThemeContext = React.createContext(value);
+const ThemeContext = React.createContext({ class_name: "dark", text: "Push me" });
+console.log(ThemeContext);
 const App = () => {
   return (
     <React.Fragment>
@@ -25,7 +27,7 @@ const App = () => {
       <p>Look, we don't need to pass <em>props</em> as an argument down the hierarchy anymore!</p>
       <p>Moreover, no matter which argument name we pass to <b>HandleBar</b> children.</p>
       <hr />
-      <ThemeContext.Provider value={value}>
+      <ThemeContext.Provider value={ThemeContext._currentValue}>
         <Toolbar />
       </ThemeContext.Provider>
     </React.Fragment>
