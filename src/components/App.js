@@ -3,27 +3,27 @@ import React from 'react'
 const Toolbar = () => {
   return (<HandleBar />)
 }
-const HandleBar = () => {
+const HandleBar = ({props}) => {
   return (
     <ThemeContext.Consumer>
-      {theme => <Button class_name={theme}></Button>}
+      {props => <Button {...props}></Button>}
     </ThemeContext.Consumer>
   )
 }
 const Button = ( props ) => {
   console.log(props);
-  return (<button className={props.class_name}>Btn here</button>)
+  return (<button className={props.class_name}>{props.text}</button>)
 }
 /* */
 
-const ThemeContext = React.createContext({theme:'light'});
+const value = { class_name: "dark", text: "Push me" };
+const ThemeContext = React.createContext(value);
 
 const App = () => {
-  // var theme = { btnTheme: "dark", btnText: "Push me" };
   return (
     <React.Fragment>
       <h3>Hello World!</h3>
-      <ThemeContext.Provider value="dark">
+      <ThemeContext.Provider value={value}>
         <Toolbar />
       </ThemeContext.Provider>
     </React.Fragment>
