@@ -6,6 +6,7 @@ import Menu from './Menu'
 import Default from './components/Default'
 import Home from './components/Home'
 import Routing from './components/Routing'
+import NoMatch from './components/NoMatch'
 
 const App = () => {
   return (
@@ -15,6 +16,7 @@ const App = () => {
       <Route path='/home' exact component={Home} />
       <Route path='/routing' component={Routing} />
       <Route path='/context' component={ThemeContext} />
+      <Route component={NoMatch} />
     </React.Fragment>
   )
 }
