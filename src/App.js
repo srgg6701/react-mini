@@ -1,8 +1,9 @@
 import React from 'react'
 import { Route, Link } from 'react-router-dom'
-import { Home } from './components/Home'
-import { Hello } from './components/Hello'
-import { Bye } from './components/Bye'
+import { BrowserRouter} from 'react-router-dom'
+import Home from './components/Home'
+import Hello from './components/Hello'
+import Bye from './components/Bye'
 
 class App extends React.Component {
   constructor(props) {
