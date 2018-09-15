@@ -1,6 +1,7 @@
 import React from 'react'
 import './debug'
 import {Toolbar, value, ThemeContext} from './Theme'
+import Home from './Home'
 
 const App = () => {
   return (
@@ -12,6 +13,8 @@ const App = () => {
       <ThemeContext.Provider value={value}>
         <Toolbar />
       </ThemeContext.Provider>
+      <hr/>
+      <Home />
     </React.Fragment>
   )
 }
