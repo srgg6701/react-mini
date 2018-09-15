@@ -26,7 +26,7 @@ class App extends React.Component {
           </li>
         </ul>
         <hr />
-        <Route path='/' component={Home} />
+        <Route path='/' exact component={Home} />
         <Route path='/Hello' component={Hello} />
         <Route path='/Bye' component={Bye} />
       </React.Fragment>
