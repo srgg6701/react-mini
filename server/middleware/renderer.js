@@ -19,7 +19,7 @@ export default (req, res, next) => {
         }
 
         // render the app as a string
-        const html = ReactDOMServer.renderToString(<App />);
+        const html = ReactDOMServer.renderToString(<App mypath="super-path" />);
 
         // inject the rendered app into our html and send it
         return res.send(
