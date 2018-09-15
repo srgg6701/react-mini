@@ -1,0 +1,21 @@
+ul.menu{
+    padding: 0;
+}
+ul.menu li{
+    display: inline-block;
+}
+ul.menu li a{
+    display: block;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 4px 6px;
+}
+ul.menu li a:hover{
+    background-color: #eee;
+    text-decoration: none;
+}
+code{
+    background-color: #ddd;
+    border: solid 1px #ddd;
+    display: inline-block;
+    padding: 0 4px;
+}

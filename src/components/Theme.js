@@ -17,6 +17,5 @@ const Button = (props) => {
 }
 
 const value = { class_name: "dark", text: "Push me" };
-const ThemeContext = React.createContext(value);
 
-export {Toolbar, value, ThemeContext}
+export default () => React.createContext(value)

@@ -1,26 +1,20 @@
 import React from 'react'
 import './components/debug'
-import { BrowserRouter, Route, Link } from 'react-router-dom'
-import { Toolbar, value, ThemeContext } from './components/Theme'
-import Home from './components/Home'
+import { Route } from 'react-router-dom'
+import ThemeContext from './components/Theme'
+import Menu from './Menu'
 import Default from './components/Default'
-
-console.log({ BrowserRouter, Route, Link, Default });
+import Home from './components/Home'
+import Routing from './components/Routing'
 
 const App = () => {
   return (
     <React.Fragment>
-      <ul>
-        <li>
-          <Link to="/home">Home</Link>
-        </li>
-        <li>
-          <Link to="/default">Default</Link>
-        </li>
-      </ul>
-      <h1>Hello, Dude!</h1>
+      <Menu />
+      <Route path='/' exact component={Default} />
       <Route path='/home' exact component={Home} />
-      <Route path='/default' component={Default} />
+      <Route path='/routing' component={Routing} />
+      <Route path='/context' component={ThemeContext} />
     </React.Fragment>
   )
 }
