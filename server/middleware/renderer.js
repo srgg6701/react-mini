@@ -2,6 +2,7 @@ import React from 'react'
 import ReactDOMServer from 'react-dom/server'
 
 // import our main App component
+// import App from '../../src/AppServer';
 import App from '../../src/components/App';
 
 const path = require("path");
