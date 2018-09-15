@@ -1,7 +1,7 @@
 import React from 'react'
-import './debug'
-import {Toolbar, value, ThemeContext} from './Theme'
-import Home from './Home'
+import './components/debug'
+import {Toolbar, value, ThemeContext} from './components/Theme'
+import Home from './components/Home'
 
 const App = () => {
   return (
