@@ -1,6 +1,23 @@
 h1,h2,h3,h4{
     font-family: Arial, Helvetica, serif;
 }
+legend h3,
+legend h4{
+    font-weight: bold;
+    line-height: 1.5 
+    font-family: Arial, Helvetica, serif;
+    margin:0;
+}
+legend h3{
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+}
+
+legend h4{
+    font-size: 1rem;
+    margin-bottom: 0.3rem;
+}
+
 ul.menu{
     padding: 0;
 }
@@ -17,8 +34,9 @@ ul.menu li a:hover{
     text-decoration: none;
 }
 code{
-    background-color: #ddd;
+    background-color: #eee;
     border: solid 1px #ddd;
     display: inline-block;
-    padding: 0 4px;
+    margin: -2px auto;
+    padding: 2px 4px;
 }
