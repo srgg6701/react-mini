@@ -2,6 +2,10 @@
 <html lang="en">
   <head>
     <title>Minimal React</title>
+    <base id="set_base" />
+    <script>
+      document.getElementById('set_base').setAttribute('href', location.protocol+'//'+location.host+'/');
+    </script>
     <link rel="stylesheet" href="src/style.css">
   </head>
     <body>

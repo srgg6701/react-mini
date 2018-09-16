@@ -9,14 +9,16 @@ class Doors extends React.Component {
         return <div>🚪 Doorways here</div>
     }
     render() {
-        return <div>Doors comes here!{this.props.children}</div>;
+        return (<div>
+            <h4>🚪 Parent doors here.</h4>
+            {this.props.children}
+        </div>);
     }
 }
 
-export default class Home extends React.Component {
+export default class Children extends React.Component {
     render() {
         return <div>
-            🏡 Home, sweet home!
             <Doors level="top">
                 <hr/>
                 <p>Yo! Children here</p>

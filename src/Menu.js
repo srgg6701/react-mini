@@ -6,13 +6,13 @@ function setMenuOption(link, text){
 }
 
 function makeMenu() {
-    return Object.entries({ home: 'Home', routing: 'Routing', context: 'ThemeContext' }).map(entry => {
+    return Object.entries({ children: 'Children', routing: 'Routing', context: 'ThemeContext' }).map(entry => {
         return setMenuOption(entry[0], entry[1])
     });
 }
 
 export default () => (
     <ul className="menu">
-    {setMenuOption('', 'Root')}
+    {setMenuOption('', 'Home')}
     {makeMenu()}
 </ul>)
