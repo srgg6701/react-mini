@@ -6,7 +6,7 @@ function setMenuOption(link, text){
 }
 
 function makeMenu() {
-    return Object.entries({ home: 'Home', routing: 'Routing' }).map(entry => {
+    return Object.entries({ home: 'Home', routing: 'Routing', context: 'ThemeContext' }).map(entry => {
         return setMenuOption(entry[0], entry[1])
     });
 }
